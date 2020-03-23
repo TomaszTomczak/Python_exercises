@@ -1,5 +1,6 @@
 import socket
 
+# I will try to do this in seperate thread
 
 TCP_IP = '127.0.0.1'
 TCP_PORT = 5005
