@@ -3,7 +3,7 @@ import socket
 # I will try to do this in seperate thread
 
 TCP_IP = '127.0.0.1'
-TCP_PORT = 5005
+TCP_PORT = 50000
 BUFFER_SIZE = 20  # Normally 1024, but we want fast response
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -14,7 +14,9 @@ conn, addr = s.accept()
 print 'Connection address:', addr
 while 1:
     data = conn.recv(BUFFER_SIZE)
-    if not data: break
+    if data: 
     print "received data:", data
     conn.send(data)  # echo
+
 conn.close()
+
